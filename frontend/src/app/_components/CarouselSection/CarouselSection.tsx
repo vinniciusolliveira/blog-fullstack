@@ -1,6 +1,7 @@
 "use client"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import CarouselCard from "./CarouselCard";
 
 const carouselOptions = {
@@ -13,6 +14,7 @@ const carouselPlugins = [
     stopOnMouseEnter: true,
     stopOnInteraction: false
   }),
+  WheelGesturesPlugin(),
 ]
 
 const CarouselSection: React.FC = () => {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 
 
 interface CarouselCardProps {
@@ -20,7 +20,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({title, subtitle, description
       <div className="relative w-full bg-gradient-to-b from-transparent to-zinc-900 group-hover:to-black h-32">
       <div className="h-full flex flex-col text-white p-4">
           <div className="h-2/5">
-            <p className="font-bold text-2xl">{title}</p>
+            <Link href="" className="font-bold text-2xl hover:underline">{title}</Link>
           </div>
           <div className="h-2/5">
             <p className="text-base">{description}</p>

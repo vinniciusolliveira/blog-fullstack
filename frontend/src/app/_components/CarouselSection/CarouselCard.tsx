@@ -4,7 +4,7 @@ import Image from "next/image";
 const CarouselCard: React.FC = () => {
   return (
     <div className="relative h-full w-full flex items-end group">
-      <Image src="https://i.ibb.co/5Gxhpr8/images.jpg" alt="" fill className="object-cover"/>
+      <Image src="https://i.ibb.co/3z7vTkC/image.png" alt="" fill className="object-cover"/>
       <div className="relative w-full bg-gradient-to-b from-transparent to-zinc-900 group-hover:to-black h-32">
       <div className="h-full flex flex-col text-white p-4">
           <div className="h-2/5">

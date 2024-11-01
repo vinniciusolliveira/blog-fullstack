@@ -156,8 +156,9 @@ const CarouselContent = React.forwardRef<
 >(({ className, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel()
 //colocando um h-full para poder o carrossel pegar toda a tela
+//colocando um rounded-xl para aplicar no carrossel
   return (
-    <div ref={carouselRef} className="overflow-hidden h-full">
+    <div ref={carouselRef} className="overflow-hidden h-full rounded-xl">
       <div
         ref={ref}
         className={cn(

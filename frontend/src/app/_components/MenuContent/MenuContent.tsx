@@ -4,8 +4,8 @@ import Card from "./Card";
 
 const MenuContent: React.FC = () => {
     return (
-        <div className="max-h-[1426px] w-96 border rounded-2xl">
-            <div className="h-16 flex items-center justify-center border-b">
+        <div className="max-h-[1426px] w-96 border border-border rounded-2xl">
+            <div className="h-16 flex items-center justify-center border-b border-border">
                 <h3 className="text-2xl text-black font-semibold">Escolhas dos Editores</h3>
             </div>
             <div className="flex justify-center">
@@ -21,7 +21,7 @@ const MenuContent: React.FC = () => {
                 <Card/>
                 </div>
             </div>
-            <div className="h-16 flex items-center justify-center border-t">
+            <div className="h-16 flex items-center justify-center border-t border-border">
                 <button>Mais conteúdos recomendados</button>
             </div>
         </div>

@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const CardContent: React.FC = () => {
   return (
-    <div className="minh-[13.31rem] w-full border-b border-zinc-700 flex items-start">
+    <div className="minh-[13.31rem] w-full border-b border-border flex items-start">
       <div className="min-h-[13.31rem] w-full flex flex-row justify-between gap-4 pb-8">
         <div className="w-[24rem] flex justify-center">
           <Link href="" className="h-[13.31rem] w-[24rem] relative">
             <Image
               className="rounded-xl object-cover"
-              src="https://i.ibb.co/5Gxhpr8/images.jpg"
+              src="https://i.ibb.co/3z7vTkC/image.png"
               alt=""
               fill
             />

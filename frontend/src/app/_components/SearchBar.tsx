@@ -42,10 +42,10 @@ const SearchBar: React.FC = () => {
   return (
     <>
       {/* Barra de pesquisa que abre o modal */}
-      <div className="h-full flex items-center">
+      <div className="h-full justify-end flex items-center">
         <button
           onClick={() => setIsOpen(true)}
-          className="text-left w-full border border-zinc-700 bg-zinc-800 p-2 rounded-md text-zinc-400 hover:text-white"
+          className="inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground px-4 py-2 relative w-full justify-start rounded-[0.5rem] bg-muted/80 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
         >
           <span className="flex items-center gap-2">
             <Search size={18} />

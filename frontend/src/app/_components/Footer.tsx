@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 
+
 const Footer: React.FC = () => {
     return (
         <div className="text-zinc-500 border-t border-border">

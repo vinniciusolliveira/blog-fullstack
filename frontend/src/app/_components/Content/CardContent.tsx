@@ -1,7 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CardContent: React.FC = () => {
+
+
+
+interface CardContentProps {
+  title: string
+  subtitle: string
+  description: string
+  srcImage: string
+  category: string
+  locale: string
+  date: string
+}
+
+
+const CardContent: React.FC<CardContentProps> = ({title, subtitle, description, srcImage, category, locale, date}) => {
   return (
     <div className="minh-[13.31rem] w-full border-b border-border flex items-start">
       <div className="min-h-[13.31rem] w-full flex flex-row justify-between gap-4 pb-8">
@@ -9,29 +23,23 @@ const CardContent: React.FC = () => {
           <Link href="" className="h-[13.31rem] w-[24rem] relative">
             <Image
               className="rounded-xl object-cover"
-              src="https://i.ibb.co/3z7vTkC/image.png"
-              alt=""
+              src={srcImage}
+              alt={title}
               fill
             />
           </Link>
         </div>
         <div className="h-52 w-w-full flex flex-col gap-1 ">
           <div>
-            <p className="font-semibold text-base">Ceara</p>
+            <p className="font-semibold text-base">{subtitle}</p>
           </div>
           <div>
-            <Link href="" className="font-bold text-2xl hover:underline">
-                CIEE e Google ofertam 70 mil bolsas de estudos na área de
-                tecnologia; veja como participar
-            </Link>
+            <Link href="" className="font-bold text-2xl hover:underline">{title}</Link>
           </div>
           <div>
-            <p className="text-base">
-                Curso obteve conceito máximo em todas as dimensões avaliadas:
-                metodologia de ensino, professores e infraestrutura
-            </p>
+            <p className="text-base">{description}</p>
           </div>
-          <div><p className="text-xs">Há 18 horas -- Em Eleições 2024 no Ceará</p></div>
+          <div><p className="text-xs">{date} — Em {category} no {locale}</p></div>
         </div>
       </div>
     </div>

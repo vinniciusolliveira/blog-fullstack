@@ -33,9 +33,15 @@ const CarouselSection: React.FC = () => {
     <div className="min-h-full h-full w-full">
       <Carousel opts={carouselOptions} plugins={carouselPlugins} className="min-h-full h-full w-full">
       <CarouselContent className="text-white min-h-full h-full">
-        <CarouselItem className="h-full w-full"><CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/></CarouselItem>
-        <CarouselItem className="h-full w-full"><CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/></CarouselItem>
-        <CarouselItem className="h-full w-full"><CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/></CarouselItem>
+        <CarouselItem className="h-full w-full">
+          <CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/>
+        </CarouselItem>
+        <CarouselItem className="h-full w-full">
+          <CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/>
+        </CarouselItem>
+        <CarouselItem className="h-full w-full">
+          <CarouselCard title={CarouselCardProps.title} subtitle={CarouselCardProps.subtitle} description={CarouselCardProps.description} srcImage={CarouselCardProps.srcImage} category={CarouselCardProps.category} locale={CarouselCardProps.locale} date={CarouselCardProps.date}/>
+        </CarouselItem>
       </CarouselContent>
     </Carousel>
     </div>

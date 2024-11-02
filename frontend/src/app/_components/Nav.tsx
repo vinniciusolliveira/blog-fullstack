@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SearchBar from "./SearchBar";
+import SearchBar from "../blog/_components/SearchBar";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { ModeToggle } from "./themeComponent";
 

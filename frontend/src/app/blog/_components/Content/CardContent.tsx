@@ -6,11 +6,11 @@ import Link from "next/link";
 
 interface CardContentProps {
   title: string
-  subtitle: string
-  description: string
+  subtitle?: string
+  description?: string
   srcImage: string
-  category: string
-  locale: string
+  category?: string
+  locale?: string
   date: string
 }
 

@@ -6,18 +6,10 @@ import Footer from "../../_components/Footer";
 
 //nesse arquvio estou tentando fazer a funcao assincrona para usar Optional Catch-all Segments, ainda sem sucesso totalmente :(
 
-export default async function Blog({
-    params,
-}: {
-    params: {
-        slug: string[];
-    };
-}) {
-    if(params.slug?.length === 2) {
-        return <h1>Viewing docs for feature {params.slug[0]} and concept {params.slug[1]}</h1>
-    } else if (params.slug?.length === 1) {
-        return <h1>Wiewing docs for feature {params.slug[0]}</h1>
-    }
+
+export default async function Page({}: {params: Promise<{ slug?: string[] }>}) {
+
+
     return (
         <div className="min-h-screen max-w-screen bg-background">
           <Nav/>

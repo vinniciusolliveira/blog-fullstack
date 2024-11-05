@@ -1,40 +1,60 @@
-import Content from "../_components/Content/Content";
-import CarouselSection from "../_components/CarouselSection/CarouselSection";
-import Nav from "../../_components/Nav";
-import MenuContent from "../_components/MenuContent/MenuContent";
-import Footer from "../../_components/Footer";
+import BlogPage from "./_components/BlogPage";
+import PostPage from "./_components/PostPage";
+import { notFound } from "next/navigation";
 
-//nesse arquvio estou tentando fazer a funcao assincrona para usar Optional Catch-all Segments, ainda sem sucesso totalmente :(
+// Defina as categorias e subcategorias que você espera
+const categories = ['noticias', 'tecnologia', 'entretenimento'];
+const locals = ['brazil', 'usa', 'europe'];
+const subcategories = ['eleicoes'];
+const years = ['2022', '2023', '2024'];
+const months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+const days = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
+export default async function BlogRouter({
+  params,
+}: {
+  params: {
+    slug: string[];
+  }
+}) {
+  const [local, category, subcategory, year, month, day, post] = params.slug;
 
-export default async function Page({}: {params: Promise<{ slug?: string[] }>}) {
+  // Lógica para identificar o que renderizar
+  if (locals.includes(local)) {
+    if (category && categories.includes(category)) {
+      if (subcategory && subcategories.includes(subcategory)) {
+        // Verifique se existe um post primeiro
+        if (post) {
+          // Renderize a página do post
+          return <PostPage postId={post} />;
+        }
 
+        // Se não houver um post, verifique os outros parâmetros
+        if (year && years.includes(year)) {
+          if (month && months.includes(month)) {
+            if (day && days.includes(day)) {
+              // Renderize a página para um dia específico
+              return <h1>Posts de {day}/{month}/{year} na subcategoria {subcategory}</h1>;
+            }
+            // Renderize a página para um mês específico
+            return <h1>Posts de {month}/{year} na subcategoria {subcategory}</h1>;
+          }
+          // Renderize a página para um ano específico
+          return <h1>Posts de {year} na subcategoria {subcategory}</h1>;
+        }
 
-    return (
-        <div className="min-h-screen max-w-screen bg-background">
-          <Nav/>
-          <div className="flex justify-center pt-16">
-            <div className="w-[70%]">
-              <section className="h-[50rem] flex justify-center items-center">
-                <div className="h-[45rem] w-full">
-                  <div className="h-full w-full"><CarouselSection/></div>
-                </div>
-              </section>
-              <section className="min-h-screen flex flex-row">
-                <div className="w-8/12">
-                  <div className="h-full w-full"><Content/></div>
-                  <div className="w-full h-10 flex justify-center items-center">
-                    <button className="whitespace-nowrap rounded-md text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-8 py-2">Ver mais</button>
-                  </div>
-                </div>
-                <div className="w-4/12 flex justify-center">
-                  <MenuContent/>
-                </div>
-              </section>
-              <section className="h-[7.5rem] w-full"></section>
-            </div>
-          </div>
-          <Footer/>
-        </div>
-      );
+        // Renderize a página da subcategoria
+        return <h1>Subcategoria: {subcategory}</h1>;
+      }
+
+      // Renderize a página da categoria
+      return <h1>Categoria: {category}</h1>;
+    }
+
+    // Renderize a página para um local específico
+    return <h1>Blog para {local}</h1>;
+  }
+
+  // Se não corresponder a nenhuma rota conhecida
+  return notFound();
 }
